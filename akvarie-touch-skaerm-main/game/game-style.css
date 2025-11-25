@@ -1,0 +1,347 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #001f3f 0%, #003d5c 50%, #005580 100%);
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tilbage knap */
+header {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+#backBtn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  border: 6px solid white;
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#backBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+#backBtn:active {
+  transform: scale(0.95);
+}
+
+/* Bobler animation i baggrund */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.15) 8px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.1) 12px,
+      transparent 12px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.08) 6px,
+      transparent 6px
+    );
+  background-size: 200px 200px, 300px 300px, 150px 150px;
+  animation: bubbles 25s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Start skærm */
+#startScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #001f3f 0%, #003d5c 50%, #005580 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  text-align: center;
+}
+
+#startScreen h1 {
+  font-size: 4rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffeb3b;
+  text-shadow: 0 0 30px rgba(255, 235, 59, 0.8);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Mascot intro section */
+.mascot-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.intro-mascot {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
+  animation: fishBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes fishBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+.intro-bubble {
+  position: relative;
+  background: white;
+  padding: 25px 40px;
+  border-radius: 30px;
+  max-width: 400px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.intro-bubble p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #003d7a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.intro-bubble::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-right: 25px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #80d8ff;
+  text-shadow: 0 0 10px rgba(128, 216, 255, 0.6);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 235, 59, 0.6);
+  }
+  to {
+    text-shadow: 0 0 40px rgba(255, 235, 59, 1),
+      0 0 50px rgba(255, 235, 59, 0.8);
+  }
+}
+
+#startButton {
+  padding: 25px 60px;
+  font-size: 2rem;
+  background: linear-gradient(45deg, #00bcd4 30%, #0097a7 90%);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.5);
+  font-weight: bold;
+}
+
+#startButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.7);
+  background: linear-gradient(45deg, #0097a7 30%, #00bcd4 90%);
+}
+
+/* Spil container */
+#gameContainer {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Score board */
+#scoreBoard {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+#score {
+  color: #ffeb3b;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: 3px solid rgba(255, 235, 59, 0.5);
+  font-weight: bold;
+}
+
+/* Game area */
+#gameArea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Fisk styling */
+.fish {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  animation: swim 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.fish img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.fish:hover {
+  transform: scale(1.15);
+  filter: brightness(1.3);
+}
+
+.fish:active {
+  transform: scale(0.95);
+}
+
+@keyframes swim {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+/* Click animation */
+@keyframes fishCaught {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.fish.caught {
+  animation: fishCaught 0.5s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Point popup */
+.point-popup {
+  position: absolute;
+  color: #ffeb3b;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 235, 59, 1);
+  animation: popupFloat 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes popupFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50px) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1);
+  }
+}

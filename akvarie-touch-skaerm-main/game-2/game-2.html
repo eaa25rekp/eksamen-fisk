@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Akvarie Spil for Børn</title>
+    <link rel="stylesheet" href="game-2.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Tilbage knap -->
+    <header>
+      <a href="../index.html" id="backBtn">←</a>
+    </header>
+
+    <!-- Start skærm -->
+    <div id="startScreen">
+      <h1>Akvarie Spillet</h1>
+
+      <div class="mascot-intro">
+        <img
+          src="../img/Nemo-fish.png"
+          alt="Nemo maskot"
+          class="intro-mascot"
+          id="startMascot"
+        />
+        <div class="intro-bubble">
+          <p>Styr dykkern med piletasterne og saml skraldet!</p>
+        </div>
+      </div>
+
+      <button id="startknap">Start Spil</button>
+    </div>
+
+    <!-- Game container -->
+    <div class="game-container">
+      <h1 class="game-title">Akvarie Spillet</h1>
+
+      <!-- Spil indhold -->
+      <div id="game">
+        <div id="score">Score: <span id="points">0</span></div>
+        <div id="dodger"></div>
+        <div id="coin">
+          <img src="../img/skrald.png" alt="mad">
+        </div>
+        <div class="structure" id="wall1"></div>
+        <div class="structure" id="wall2"></div>
+        <div class="structure" id="wall3"></div>
+      </div>
+
+      <!-- Info boks til kontroller -->
+      <div class="controls-info">
+        <p>Brug piletasterne for at styre dykkeren</p>
+        <p>Pas på korallerne og saml skraldet op fra havet af!</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Lavet af Sebastian © 2025</p>
+    </div>
+
+    <!-- Game over skærm -->
+    <div id="gameOverScreen" style="display: none">
+      <h1>Spillet er slut!</h1>
+      <p>Din score: <span id="finalScore">0</span></p>
+      <button id="restartButton">Spil igen</button>
+    </div>
+
+    <script src="game-2.js"></script>
+  </body>
+</html>

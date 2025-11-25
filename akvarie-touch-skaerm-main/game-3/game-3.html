@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Sortér Fiskene</title>
+    <link rel="stylesheet" href="game-3.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Tilbage knap -->
+    <header>
+      <a href="../index.html" id="backBtn">←</a>
+    </header>
+
+    <!-- Start skærm -->
+    <div id="startScreen">
+      <h1>Sortér Fiskene</h1>
+
+      <div class="mascot-intro">
+        <img
+          src="../img/Nemo-fish.png"
+          alt="Nemo maskot"
+          class="intro-mascot"
+          id="startMascot"
+        />
+        <div class="intro-bubble">
+          <p>Træk fiskene til den rigtige spand!</p>
+        </div>
+      </div>
+
+      <button id="startButton">Start Spil</button>
+    </div>
+
+    <!-- Spil container -->
+    <div id="gameContainer">
+      <div class="game-header">
+        <div class="score-box">
+          <span class="label">Point:</span>
+          <span id="score">0</span>
+        </div>
+      </div>
+
+      <!-- Spande -->
+      <div class="buckets">
+        <div class="bucket" id="blueBucket" data-color="blue">
+          <div class="bucket-label">Blå Fisk</div>
+        </div>
+        <div class="bucket" id="orangeBucket" data-color="orange">
+          <div class="bucket-label">Orange Fisk</div>
+        </div>
+      </div>
+
+      <!-- Fiske container -->
+      <div id="fishContainer">
+        <!-- Fisk spawner her via JavaScript -->
+      </div>
+
+      <div id="winScreen" class="win-screen">
+        <h2>Tillykke!</h2>
+        <p>Du sorterede alle fiskene!</p>
+        <p class="final-score">Point: <span id="finalScore">0</span></p>
+        <button id="playAgainBtn">Spil Igen</button>
+      </div>
+    </div>
+
+    <script src="game-3.js"></script>
+  </body>
+</html>

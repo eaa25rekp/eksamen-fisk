@@ -1,0 +1,928 @@
+/* Global styles og reset */ /* Rebecca kode */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Nemo intro skærm */ /* Rebecca kode */
+
+.nemo-intro {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease-out;
+}
+
+.nemo-intro.fade-out {
+  /* Rebecca kode */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nemo-intro-gif {
+  /* Rebecca kode */
+  width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  animation: nemoFloat 2s ease-in-out infinite;
+}
+
+@keyframes nemoFloat {
+  /* Rebecca kode */
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.intro-speech-bubble {
+  background: white;
+  padding: 30px 50px;
+  border-radius: 40px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #003d7a;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: bubblePop 0.5s ease-out;
+}
+
+@keyframes bubblePop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.intro-speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+#spilMenuBtn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  border: 6px solid white;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+#spilMenuBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+#spilMenuBtn:active {
+  transform: scale(0.95);
+}
+
+.game-menu {
+  /* Rebecca kode */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 31, 63, 0.95);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.game-menu.active {
+  display: flex;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-content {
+  background: linear-gradient(180deg, #00a8cc, #0077b6);
+  padding: 60px 60px;
+  border-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  max-width: 1400px;
+  width: 90%;
+  max-height: 95%;
+  overflow-y: auto;
+  border: 8px solid white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff4757;
+  border: 4px solid white;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: #ff3838;
+}
+
+/* Mascot Section */
+.mascot-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mascot-fish {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
+  animation: fishBob 2s ease-in-out infinite;
+}
+
+@keyframes fishBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.speech-bubble {
+  position: relative;
+  background: white;
+  padding: 25px 45px;
+  border-radius: 35px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #003d7a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+/* Game Cards Container */
+.game-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Individual Game Card */
+.game-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: 6px solid #ffd700;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-color: #ff6b6b;
+}
+
+.game-card:active {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.card-image {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder for missing images */
+.card-image:empty::after {
+  content: "🐠";
+  font-size: 100px;
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #spilMenuBtn {
+    width: 100px;
+    height: 100px;
+    font-size: 24px;
+  }
+
+  .menu-content {
+    padding: 40px 20px;
+    border-radius: 30px;
+  }
+
+  .menu-content h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+
+  .game-cards {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card-image {
+    height: 220px;
+  }
+
+  .game-card h2 {
+    font-size: 32px;
+    padding: 25px 15px;
+  }
+
+  .close-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+/* Cilles CSS start */
+
+#puffish {
+  position: absolute;
+  bottom: 35vh;
+  width: 150px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: puffer 12s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes puffer {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw - 200px));
+  }
+}
+
+#tuxfish {
+  position: absolute;
+  bottom: 20vh;
+  width: 300px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: tuxedo 17s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes tuxedo {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+#bpfish {
+  position: absolute;
+  bottom: 5vh;
+  width: 250px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: bluepink 16s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes bluepink {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+#ogfish {
+  position: absolute;
+  bottom: 12vh;
+  width: 200px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: orangefish 19s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes orangefish {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw + 200px));
+  }
+}
+
+#seahorse {
+  position: absolute;
+  bottom: 35vh;
+  width: 90px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: seahorse 17s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes seahorse {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(140vw + 200px));
+  }
+}
+
+#puffish2 {
+  position: absolute;
+  bottom: 60vh;
+  width: 180px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: puffer2 15s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes puffer2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(140vw + 200px)) rotateY(180deg);
+  }
+}
+
+#tuxfish2 {
+  position: absolute;
+  bottom: 55vh;
+  width: 250px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: tuxedo2 18s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes tuxedo2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw - 200px)) rotateY(180deg);
+  }
+}
+
+#bpfish2 {
+  position: absolute;
+  bottom: 40vh;
+  width: 300px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: bluepink2 19s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes bluepink2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw - 200px)) rotateY(180deg);
+  }
+}
+
+#ogfish2 {
+  position: absolute;
+  bottom: 30vh;
+  width: 275px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: orangefish2 13s linear infinite;
+  cursor: pointer;
+}
+
+#seahorse2 {
+  position: absolute;
+  bottom: 80vh;
+  width: 50px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: seahorse2 12s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes seahorse2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw - 200px)) rotateY(180deg);
+  }
+}
+
+@keyframes orangefish2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px)) rotateY(180deg);
+  }
+}
+
+#puffish3 {
+  position: absolute;
+  bottom: 4vh;
+  width: 165px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: puffer3 14s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes puffer3 {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw - 200px));
+  }
+}
+
+#tuxfish3 {
+  position: absolute;
+  bottom: 10vh;
+  width: 220px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: tuxedo3 14s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes tuxedo3 {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+#bpfish3 {
+  position: absolute;
+  bottom: 70vh;
+  width: 500px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: bluepink3 20s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes bluepink3 {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+#ogfish3 {
+  position: absolute;
+  bottom: 72vh;
+  width: 250px;
+  max-width: 28vw;
+  z-index: 4;
+  right: calc(-1 * 200px);
+  animation: orangefish3 15s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes orangefish3 {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-140vw + 200px));
+  }
+}
+
+#seahorse3 {
+  position: absolute;
+  bottom: 10vh;
+  width: 70px;
+  max-width: 28vw;
+  z-index: 4;
+  left: calc(-1 * 200px);
+  animation: seahorse3 12s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes seahorse3 {
+  0% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(140vw + 200px));
+  }
+}
+
+#bgimage {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg-done.png) no-repeat center;
+  background-size: cover;
+}
+
+#seashell-closed {
+  position: absolute;
+  bottom: 5vh;
+  width: 150px;
+  left: 25px;
+  max-width: 28vw;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Bobler fra musling */
+.shell-bubble {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 50%;
+  bottom: 10vh;
+  left: 80px;
+  animation: shellBubbleRise 2s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shellBubbleRise {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80vh) translateX(20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+#treasure-chest {
+  position: absolute;
+  bottom: 18vh;
+  width: 180px;
+  right: 150px;
+  max-width: 28vw;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.6));
+  animation: treasureGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes treasureGlow {
+  from {
+    filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.6));
+  }
+  to {
+    filter: drop-shadow(0 0 30px rgba(255, 235, 59, 1))
+      drop-shadow(0 0 40px rgba(255, 235, 59, 0.8));
+  }
+}
+
+#seaweed {
+  position: absolute;
+  bottom: 10vh;
+  width: 600px;
+  right: -60px;
+  max-width: 50vw;
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fiskefakta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  font-size: 18px;
+  font-weight: normal;
+  color: #2c3e50;
+  padding: 30px 35px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  font-family: "Arial", sans-serif;
+  z-index: 1000;
+  line-height: 1.8;
+  max-width: min(380px, 90vw);
+  display: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.fiskefakta .fish-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #00a8cc;
+  margin-bottom: 15px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fiskefakta .info-label {
+  font-weight: 700;
+  color: #34495e;
+}
+
+.fiskefakta .info-content {
+  font-weight: 400;
+  color: #5a6c7d;
+}
+
+.fiskefakta.is-visible {
+  display: block;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#bpfish.spin-right {
+  animation: bluepink 19s linear infinite, spin-right 2s linear infinite;
+}
+
+#bpfish2.spin-left {
+  animation: bluepink2 16s linear infinite, spin-left 2s linear infinite;
+}
+
+#bpfish3.spin-right {
+  animation: bluepink3 20s linear infinite, spin-right 2s linear infinite;
+}
+
+@keyframes spin-right {
+  0% {
+    transform: translateX(0) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px)) rotateY(1800deg) rotateX(180deg);
+  }
+}
+
+@keyframes spin-left {
+  0% {
+    transform: translateX(0) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 200px)) rotateY(1800deg) rotateX(180deg);
+  }
+}
+
+#seahorse.seahorseHop {
+  animation: seahorse 17s linear infinite, seahorseHop 2s ease-out infinite;
+}
+
+#seahorse2.seahorseHop2 {
+  animation: seahorse2 12s linear infinite, seahorseHop2 2s ease-out infinite;
+}
+
+#seahorse3.seahorseHop {
+  animation: seahorse3 12s linear infinite, seahorseHop 2s ease-out infinite;
+}
+
+@keyframes seahorseHop {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+
+  10% {
+    transform: translateX(calc(10vw)) translateY(-25px);
+  }
+
+  20% {
+    transform: translateX(calc(20vw)) translateY(0);
+  }
+
+  30% {
+    transform: translateX(calc(30vw)) translateY(-25px);
+  }
+
+  40% {
+    transform: translateX(calc(40vw)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(calc(50vw)) translateY(-25px);
+  }
+
+  60% {
+    transform: translateX(calc(60vw)) translateY(0);
+  }
+
+  70% {
+    transform: translateX(calc(70vw)) translateY(-25px);
+  }
+
+  80% {
+    transform: translateX(calc(80vw)) translateY(0);
+  }
+
+  90% {
+    transform: translateX(calc(90vw)) translateY(-20px);
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 200px)) translateY(0);
+  }
+}
+
+@keyframes seahorseHop2 {
+  0% {
+    transform: translateX(0) translateY(0) rotateY(180deg);
+  }
+
+  10% {
+    transform: translateX(calc(-10vw)) translateY(-25px) rotateY(180deg);
+  }
+
+  20% {
+    transform: translateX(calc(-20vw)) translateY(0) rotateY(180deg);
+  }
+
+  30% {
+    transform: translateX(calc(-30vw)) translateY(-25px) rotateY(180deg);
+  }
+
+  40% {
+    transform: translateX(calc(-40vw)) translateY(0) rotateY(180deg);
+  }
+
+  50% {
+    transform: translateX(calc(-50vw)) translateY(-25px) rotateY(180deg);
+  }
+
+  60% {
+    transform: translateX(calc(-60vw)) translateY(0) rotateY(180deg);
+  }
+
+  70% {
+    transform: translateX(calc(-70vw)) translateY(-25px) rotateY(180deg);
+  }
+
+  80% {
+    transform: translateX(calc(-80vw)) translateY(0) rotateY(180deg);
+  }
+
+  90% {
+    transform: translateX(calc(-90vw)) translateY(-20px) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateX(calc(-100vw - 200px)) translateY(0) rotateY(180deg);
+  }
+}
+
+/* Cilles CSS slut */

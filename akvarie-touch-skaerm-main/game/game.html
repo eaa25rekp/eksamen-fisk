@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Akvarie Eventyr</title>
+    <link rel="stylesheet" href="game-style.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Tilbage knap -->
+    <header>
+      <a href="../index.html" id="backBtn">←</a>
+    </header>
+
+    <!-- Start skærm -->
+    <div id="startScreen">
+      <h1>Akvarie Eventyret!</h1>
+
+      <div class="mascot-intro">
+        <img
+          src="../img/Nemo-fish.png"
+          alt="Nemo maskot"
+          class="intro-mascot"
+          id="startMascot"
+        />
+        <div class="intro-bubble">
+          <p>Tryk på alle fiskene når de svømmer forbi!</p>
+        </div>
+      </div>
+
+      <button id="startButton">Start Spil</button>
+    </div>
+
+    <!-- Spil område -->
+    <div id="gameContainer">
+      <div id="scoreBoard">
+        <div id="score">Fisk fanget: <span id="points">0</span></div>
+      </div>
+
+      <div id="gameArea"></div>
+    </div>
+
+    <script src="game-script.js"></script>
+  </body>
+</html>
