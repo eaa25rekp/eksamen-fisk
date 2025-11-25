@@ -13,12 +13,12 @@ const mascotSound = new Audio("../audio/spil1Lyd.m4a");
 
 if (startMascot) {
   // skift til gif når siden loader
-  startMascot.src = "../img/talknemofish.gif";
+  startMascot.src = "img/klovnfiskmaskot.gif";
   mascotSound.play();
 
   // skift tilbage til png når lyden er færdig
   mascotSound.addEventListener("ended", function () {
-    startMascot.src = "../img/Nemo-fish.png";
+    startMascot.src = "../img/klovnfisk-original.png";
   });
 }
 
