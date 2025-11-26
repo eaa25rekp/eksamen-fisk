@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mus = document.getElementById("seashell-closed");
 
   const musOpen = new Image();
-  musOpen.src = "img/musOpen.png";
+  musOpen.src = "img/openmusling.png";
 
   const musSound = new Audio();
   musSound.src = "audio/burp-kort.mp3";
@@ -207,13 +207,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mus) {
     mus.addEventListener("click", function () {
-      // skift mellem musLuk.png og musOpen.png
-      if (mus.src.includes("musLuk.png")) {
-        mus.src = "img/musOpen.png";
+      // skift mellem lukketmusling.png og openmusling.png
+      if (mus.src.includes("lukketmusling.png")) {
+        mus.src = "img/openmusling.png";
         musSound.play();
         createShellBubbles(); // lav bobler når muslingen åbner
       } else {
-        mus.src = "img/musLuk.png";
+        mus.src = "img/lukketmusling.png";
       }
     });
   }
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tuxDam = tuxieToggle.currentTarget;
 
     if (tuxDam.src.includes("tuxedo-fish.gif")) {
-      tuxDam.src = "img/damsel-fish-swim.gif";
+      tuxDam.src = "img/ny-blaa-fisk.gif";
     } else {
       tuxDam.src = "img/tuxedo-fish.gif";
     }
