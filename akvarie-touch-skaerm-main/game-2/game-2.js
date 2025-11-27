@@ -146,6 +146,21 @@ function playCoinSound() {
   }
 }
 
+const movementSound = new Audio("../audio/bobler2.mp3");
+let movementLocked = false;
+
+function playMovement() {
+  if (!movementLocked) {
+    movementSound.currentTime = 0;
+    movementSound.play().catch(() => {});
+    movementLocked = true;
+  }
+}
+
+document.addEventListener("keyup", () => {
+  movementLocked = false;
+});
+
 // Game Over skærm
 function showGameOver() {
   const gameOverScreen = document.getElementById("gameOverScreen");
