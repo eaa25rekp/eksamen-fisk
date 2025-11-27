@@ -13,7 +13,7 @@ const mascotSound = new Audio("../audio/spil1Lyd.m4a");
 
 if (startMascot) {
   // skift til gif når siden loader
-  startMascot.src = "img/klovnfiskmaskot.gif";
+  startMascot.src = "../img/klovnfiskmaskot.gif";
   mascotSound.play();
 
   // skift tilbage til png når lyden er færdig
