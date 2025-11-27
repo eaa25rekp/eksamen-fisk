@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
   const tang = document.getElementById("seaweed");
 
   const tangSound = new Audio();
@@ -215,6 +216,31 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         mus.src = "img/lukketmusling.png";
       }
+    });
+  }
+
+  // Skatkiste - vis åben kiste når man klikker på lukket kiste
+  const treasureChest = document.getElementById("treasure-chest");
+  const openTreasureChest = document.getElementById("open-treasure-chest");
+
+  const chestSound = new Audio();
+  chestSound.src = "audio/gudLyd.mp3";
+
+  if (treasureChest && openTreasureChest) {
+    // Start med at skjule det åbnede billede
+    openTreasureChest.style.display = "none";
+
+    treasureChest.addEventListener("click", function () {
+      // vis åben kiste og skjul lukket kiste
+      treasureChest.style.display = "none";
+      openTreasureChest.style.display = "block";
+      chestSound.play();
+    });
+
+    // Klik på åben kiste lukker den igen
+    openTreasureChest.addEventListener("click", function () {
+      openTreasureChest.style.display = "none";
+      treasureChest.style.display = "block";
     });
   }
 
