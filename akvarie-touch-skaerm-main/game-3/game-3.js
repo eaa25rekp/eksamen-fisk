@@ -16,12 +16,12 @@ const mascotSound = new Audio("../audio/spil3Lyd.m4a");
 
 if (startMascot) {
   // skift til gif når siden loader
-  startMascot.src = "../img/talknemofish.gif";
+  startMascot.src = "../img/klovnfiskmaskot.gif";
   mascotSound.play();
 
   // skift tilbage til png når lyden er færdig
   mascotSound.addEventListener("ended", function () {
-    startMascot.src = "../img/Nemo-fish.png";
+    startMascot.src = "../img/klovnfisk-original.png";
   });
 }
 
@@ -105,22 +105,22 @@ blueBucket.addEventListener("drop", function (event) {
 
   const fishColor = draggedFish.dataset.color;
 
-if (fishColor === "blue") {
-  // korrekt!
-  coinSound.play();
-  score = score + 1;
-  scoreElement.textContent = score;
-  draggedFish.remove();
-  fishSorted = fishSorted + 1;
-} else {
-  // forkert farve
-  wrongSound.play();
-}
+  if (fishColor === "blue") {
+    // korrekt!
+    coinSound.play();
+    score = score + 1;
+    scoreElement.textContent = score;
+    draggedFish.remove();
+    fishSorted = fishSorted + 1;
+  } else {
+    // forkert farve
+    wrongSound.play();
+  }
 
-// tjek om alle fisk er sorteret
-if (fishSorted === totalFish) {
-  setTimeout(showWinScreen, 500);
-}
+  // tjek om alle fisk er sorteret
+  if (fishSorted === totalFish) {
+    setTimeout(showWinScreen, 500);
+  }
 });
 
 // når jeg slipper fisken i orange spand
@@ -130,22 +130,22 @@ orangeBucket.addEventListener("drop", function (event) {
 
   const fishColor = draggedFish.dataset.color;
 
-if (fishColor === "orange") {
-  // korrekt!
-  coinSound.play();
-  score = score + 1;
-  scoreElement.textContent = score;
-  draggedFish.remove();
-  fishSorted = fishSorted + 1;
-} else {
-  // forkert farve
-  wrongSound.play();
-}
+  if (fishColor === "orange") {
+    // korrekt!
+    coinSound.play();
+    score = score + 1;
+    scoreElement.textContent = score;
+    draggedFish.remove();
+    fishSorted = fishSorted + 1;
+  } else {
+    // forkert farve
+    wrongSound.play();
+  }
 
-// tjek om alle fisk er sorteret
-if (fishSorted === totalFish) {
-  setTimeout(showWinScreen, 500);
-}
+  // tjek om alle fisk er sorteret
+  if (fishSorted === totalFish) {
+    setTimeout(showWinScreen, 500);
+  }
 });
 
 const winMusic = new Audio();
