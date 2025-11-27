@@ -711,7 +711,7 @@ header {
 
 #treasure-chest {
   position: absolute;
-  bottom: 18vh;
+  bottom: 10vh;
   width: 180px;
   right: 150px;
   max-width: 28vw;
@@ -732,6 +732,21 @@ header {
   }
 }
 
+/* Åben skattekiste - gemt som standard og over andre elementer */
+#open-treasure-chest {
+  position: absolute;
+  bottom: 10vh;
+  width: 180px;
+  right: 150px;
+  max-width: 28vw;
+  z-index: 70; /* højere end de fleste elementer */
+  display: none; /* skjules som standard, vises via JS */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.6));
+  animation: treasureGlow 2s ease-in-out infinite alternate;
+}
+
 #seaweed {
   position: absolute;
   bottom: 10vh;
@@ -741,18 +756,6 @@ header {
   z-index: 3;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-/* Åben skattekiste - gemt som standard og over andre elementer */
-#open-treasure-chest {
-  position: absolute;
-  bottom: 18vh;
-  width: 180px;
-  right: 150px;
-  max-width: 28vw;
-  z-index: 70; /* højere end de fleste elementer */
-  display: none; /* skjules som standard, vises via JS */
-  cursor: pointer;
 }
 
 .fiskefakta {
