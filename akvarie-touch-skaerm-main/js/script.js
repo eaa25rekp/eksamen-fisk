@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // informations overlay
 
-  // Informations overlay - Cille
   const fishInfo = [
     {
       className: "pufpuf",
@@ -69,8 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-
-  //Bagrundsmusik - Cille
 
   const mediBackgroundMusic = document.getElementById("medi-backgroundMusic");
 
@@ -143,27 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gameMenu.addEventListener("click", function (e) {
       if (e.target === gameMenu) {
         gameMenu.classList.remove("active");
-      }
-    });
-  }
-
-  const tang = document.getElementById("seaweed");
-
-  const tangSound = new Audio();
-  tangSound.src = "audio/gudLyd.mp3";
-
-  const tang2Image = new Image();
-  // preload tang2 billedet
-  tang2Image.src = "img/tang2.png";
-
-  if (tang) {
-    tang.addEventListener("click", function () {
-      // skift mellem tang1.png og tang2.png
-      if (tang.src.includes("tang1.png")) {
-        tang.src = "img/tang2.png";
-        tangSound.play();
-      } else {
-        tang.src = "img/tang1.png";
       }
     });
   }
