@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navn: "Afrikanske Juvel Cichlide",
       leveTid: "7-15 år",
       funFact:
-        "Den Afrikanske Juvel Cichlide er ikke altid en strålende orange. I visse sæsoner er en mørke grøn",
+        "Den Afrikanske Juvel Cichlide er ikke altid en strålende orange. I visse sæsoner er den mørke grøn",
     },
 
     {
@@ -120,12 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // skift til gif og afspil lyd
       if (menuMascot) {
-        menuMascot.src = "img/talknemofish.gif";
+        menuMascot.src = "img/klovnfiskmaskot.gif";
         menuSound.play();
 
         // skift tilbage til png når lyden er færdig
         menuSound.addEventListener("ended", function () {
-          menuMascot.src = "img/Nemo-fish.png";
+          menuMascot.src = "img/klovnfisk-original.png";
         });
       }
     });
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tuxDam = tuxieToggle.currentTarget;
 
     if (tuxDam.src.includes("tuxedo-fish.gif")) {
-      tuxDam.src = "img/ny-blaa-fisk.gif";
+      tuxDam.src = "img/damsel-fish-swim.gif";
     } else {
       tuxDam.src = "img/tuxedo-fish.gif";
     }
