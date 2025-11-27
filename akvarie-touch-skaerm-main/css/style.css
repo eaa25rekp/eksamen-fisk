@@ -232,15 +232,15 @@ header {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.speech-bubble::after {
+.speech-bubble::before {
   content: "";
   position: absolute;
-  right: -30px;
+  left: -25px;
   top: 50%;
   transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-left: 30px solid white;
+  border-right: 25px solid white;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 }
