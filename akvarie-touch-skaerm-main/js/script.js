@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //oppustnings lyd
   const poofSound = new Audio();
-  poofSound.src = "audio/poof.wav";
+  poofSound.src = "audio/flad-mast.wav";
 
   // Prut til purt fisk når den bliver lille
   const puffSound = new Audio();
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const seahorses = document.querySelectorAll(".thereHorse");
   const neigh = new Audio();
-  neigh.src = "audio/seahorseLyd.mp3";
+  neigh.src = "audio/seahorse.mp3";
 
   seahorses.forEach((thereHorse) => {
     thereHorse.addEventListener("click", function () {
