@@ -22,8 +22,8 @@ if (startMascot) {
 }
 
 const backgroundMusic = new Audio("../audio/spil-baggrundsmusik.mp3");
-const coinSound = new Audio("../audio/escape.wav");
-const gameoverSound = new Audio("../audio/gameover_sound.m4a");
+const coinSound = new Audio("../audio/metal-klik-lyd.wav");
+const gameoverSound = new Audio("../audio/gameover.mp3");
 
 // Funktion til at starte baggrundsmusik
 function playBackgroundMusic() {
