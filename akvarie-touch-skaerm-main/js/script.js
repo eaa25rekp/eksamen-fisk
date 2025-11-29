@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Diverse animationer - Cille
 
   const magicSound = new Audio();
-  magicSound.src = "audio/Transformation.wav";
+  magicSound.src = "audio/damsel-transformation.wav";
 
   function toggleTux(tuxieToggle) {
     const tuxDam = tuxieToggle.currentTarget;
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const discusFish = document.querySelectorAll(".diskus");
   const spinSound = new Audio();
-  spinSound.src = "audio/spinny.wav";
+  spinSound.src = "audio/frisbee-lyd.wav";
 
   discusFish.forEach((diskus) => {
     diskus.addEventListener("click", function () {

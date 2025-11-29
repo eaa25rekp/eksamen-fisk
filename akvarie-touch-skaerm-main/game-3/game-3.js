@@ -27,7 +27,7 @@ if (startMascot) {
 
 // lyd til når man dropper fisk
 const coinSound = new Audio("../audio/bobler2.mp3");
-const wrongSound = new Audio("../audio/wrong.wav");
+const wrongSound = new Audio("../audio/forkert-lyd.wav");
 
 // variabler til spillet
 let score = 0;
@@ -149,7 +149,7 @@ orangeBucket.addEventListener("drop", function (event) {
 });
 
 const winMusic = new Audio();
-winMusic.src = "../audio/victory.wav";
+winMusic.src = "../audio/vinder-lyd.wav";
 
 function playWinMusic() {
   winMusic.volume = 0.1;
