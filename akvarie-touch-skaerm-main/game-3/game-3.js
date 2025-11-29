@@ -173,7 +173,7 @@ function resetGame() {
 }
 
 const backgroundMusic = new Audio();
-backgroundMusic.src = "../audio/meditation.mp3";
+backgroundMusic.src = "../audio/spil-baggrundsmusik.mp3";
 
 function playBackgroundMusic() {
   backgroundMusic.volume = 0.1;

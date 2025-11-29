@@ -21,7 +21,7 @@ if (startMascot) {
   });
 }
 
-const backgroundMusic = new Audio("../audio/meditation.mp3");
+const backgroundMusic = new Audio("../audio/spil-baggrundsmusik.mp3");
 const coinSound = new Audio("../audio/escape.wav");
 const gameoverSound = new Audio("../audio/gameover_sound.m4a");
 

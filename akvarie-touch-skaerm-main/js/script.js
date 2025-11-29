@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
   musOpen.src = "img/openmusling.png";
 
   const musSound = new Audio();
-  musSound.src = "audio/burp-kort.mp3";
+  musSound.src = "audio/burp.mp3";
 
   // funktion til at lave bobler fra muslingen
   function createShellBubbles() {

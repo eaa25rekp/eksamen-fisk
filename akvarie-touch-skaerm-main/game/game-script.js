@@ -36,7 +36,7 @@ const fishImages = [
   "../img/tuxedo-fish.gif",
 ];
 
-const backgroundMusic = new Audio("../audio/meditation.mp3");
+const backgroundMusic = new Audio("../audio/spil-baggrundsmusik.mp3");
 
 // Start spillet
 startButton.addEventListener("click", function () {
