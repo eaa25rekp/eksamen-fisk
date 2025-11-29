@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const openTreasureChest = document.getElementById("open-treasure-chest");
 
   const chestSound = new Audio();
-  chestSound.src = "audio/gudLyd.mp3";
+  chestSound.src = "audio/englekor.mp3";
 
   if (treasureChest && openTreasureChest) {
     // Start med at skjule det åbnede billede
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // De 3 const her, er fordi vi har 3 foreskellige puffer fish i vores HTML :`-)
+  // De 3 const her, er fordi vi har 3 forskellige puffer fish i vores HTML :`-)
   const puffish = document.getElementById("puffish");
   const puffish2 = document.getElementById("puffish2");
   const puffish3 = document.getElementById("puffish3");
