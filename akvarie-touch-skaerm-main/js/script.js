@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navn: "Afrikanske Juvel Cichlide",
       leveTid: "7-15 år",
       funFact:
-        "Den Afrikanske Juvel Cichlide er ikke altid en strålende orange. I visse sæsoner er den mørke grøn",
+        "Den Afrikanske Juvel Cichlide er ikke altid i en strålende orange. I visse sæsoner er den mørkegrøn",
     },
 
     {
