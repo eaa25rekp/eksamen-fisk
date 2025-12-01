@@ -89,18 +89,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const nemoIntro = document.getElementById("nemoIntro");
   const introSound = new Audio("audio/introLyd.m4a");
 
-  // når man klikker på nemo afspilles lyden (lavet som click da det ikke virkede med autoplay men optimalt havde vi brugt autoplay)
-  nemoIntro.addEventListener("click", function () {
-    introSound.play();
+  // Preload gif
+  const nemoGif = new Image();
+  nemoGif.src = "img/klovnfiskmaskot.gif";
 
-    // fade out og fjern intro efter 9 sekunder
-    setTimeout(function () {
-      nemoIntro.classList.add("fade-out");
+  // element for png that we start with
+  const nemoIntroImg = document.getElementById("nemoIntroImg");
+
+  // Klik på intro: skift PNG -> GIF, afspil lyd og start fade/out
+  if (nemoIntro && nemoIntroImg) {
+    nemoIntro.addEventListener("click", function () {
+      // skift billede til gif (for animation)
+      nemoIntroImg.src = nemoGif.src;
+
+      // afspil lyd
+      introSound.play().catch((err) => console.log("Intro play failed:", err));
+
+      // fade out og fjern intro efter 9 sekunder
       setTimeout(function () {
-        nemoIntro.remove();
-      }, 1000); // vent 1 sekund på fade out animation
-    }, 9000);
-  });
+        nemoIntro.classList.add("fade-out");
+        setTimeout(function () {
+          nemoIntro.remove();
+        }, 1000); // vent 1 sekund på fade out animation
+      }, 9000);
+    });
+  }
 
   // Menu functionality
   const spilMenuBtn = document.getElementById("spilMenuBtn");
