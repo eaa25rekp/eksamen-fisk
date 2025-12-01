@@ -50,8 +50,7 @@ function createFish() {
       fish.innerHTML = '<img src="../img/BluefishDONE.gif" alt="blå fisk">';
     } else {
       fish.dataset.color = "orange";
-      fish.innerHTML =
-        '<img src="../img/OrangefishDONE.gif" alt="orange fisk">';
+      fish.innerHTML = '<img src="../img/orangefisk.gif" alt="orange fisk">';
     }
 
     // sæt fisken et tilfældigt sted
