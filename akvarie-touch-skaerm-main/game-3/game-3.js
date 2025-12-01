@@ -47,7 +47,7 @@ function createFish() {
     const randomNumber = Math.random();
     if (randomNumber < 0.5) {
       fish.dataset.color = "blue";
-      fish.innerHTML = '<img src="../img/BluefishDONE.gif" alt="blå fisk">';
+      fish.innerHTML = '<img src="../img/blaa-roed-fisk.gif" alt="blå fisk">';
     } else {
       fish.dataset.color = "orange";
       fish.innerHTML = '<img src="../img/orangefisk.gif" alt="orange fisk">';
