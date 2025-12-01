@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nemoGif = new Image();
   nemoGif.src = "img/klovnfiskmaskot.gif";
 
-  // element for png that we start with
+  // Element for png som vi starter med
   const nemoIntroImg = document.getElementById("nemoIntroImg");
 
   // Klik på intro: skift PNG -> GIF, afspil lyd og start fade/out
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const openTreasureChest = document.getElementById("open-treasure-chest");
 
   const chestSound = new Audio();
-  chestSound.src = "audio/englekor.mp3";
+  chestSound.src = "audio/kistelyd.wav";
 
   if (treasureChest && openTreasureChest) {
     // Start med at skjule det åbnede billede
@@ -224,6 +224,18 @@ document.addEventListener("DOMContentLoaded", () => {
       treasureChest.style.display = "none";
       openTreasureChest.style.display = "block";
       chestSound.play();
+
+      // Når lyden er færdig, luk kisten automatisk (engangs-listener)
+      const onChestSoundEnd = function () {
+        // Hvis åben kiste vises, skjul den og vis den lukkede igen
+        if (openTreasureChest.style.display === "block") {
+          openTreasureChest.style.display = "none";
+          treasureChest.style.display = "block";
+        }
+        chestSound.removeEventListener("ended", onChestSoundEnd);
+      };
+
+      chestSound.addEventListener("ended", onChestSoundEnd);
     });
 
     // Klik på åben kiste lukker den igen
