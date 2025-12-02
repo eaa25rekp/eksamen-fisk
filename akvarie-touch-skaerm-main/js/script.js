@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Skatkiste - vis åben kiste når man klikker på lukket kiste
+  // Skattekiste - vis åben kiste når man klikker på lukket kiste
   const treasureChest = document.getElementById("treasure-chest");
   const openTreasureChest = document.getElementById("open-treasure-chest");
 
