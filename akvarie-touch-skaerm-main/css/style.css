@@ -1,4 +1,4 @@
-/* Global styles og reset */ /* Rebecca kode */
+/* Global styles og reset */
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Nemo intro skærm */ /* Rebecca kode */
+/* Nemo intro skærm */
 
 .nemo-intro {
   position: fixed;
@@ -21,13 +21,11 @@
 }
 
 .nemo-intro.fade-out {
-  /* Rebecca kode */
   opacity: 0;
   pointer-events: none;
 }
 
 .nemo-intro-gif {
-  /* Rebecca kode */
   width: 300px;
   height: auto;
   margin-bottom: 30px;
@@ -36,7 +34,6 @@
 }
 
 @keyframes nemoFloat {
-  /* Rebecca kode */
   0%,
   100% {
     transform: translateY(0);
@@ -116,7 +113,6 @@ header {
 }
 
 .game-menu {
-  /* Rebecca kode */
   position: fixed;
   top: 0;
   left: 0;
@@ -340,8 +336,6 @@ header {
     font-size: 28px;
   }
 }
-
-/* Cilles CSS start */
 
 #puffish {
   position: absolute;
