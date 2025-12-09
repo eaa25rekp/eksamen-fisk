@@ -89,18 +89,29 @@ header {
 }
 
 #spilMenuBtn {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  background: linear-gradient(135deg, #d75d73, #e0592b);
   border: 6px solid white;
   color: white;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
   font-family: "Comic Sans MS", cursive, sans-serif;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+  animation: menuGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes menuGlow {
+  from {
+    filter: drop-shadow(0 0 15px rgba(245, 226, 53, 0.401));
+  }
+  to {
+    filter: drop-shadow(0 0 30px rgba(255, 235, 59, 1))
+      drop-shadow(0 0 40px rgba(255, 235, 59, 0.8));
+  }
 }
 
 #spilMenuBtn:hover {
