@@ -63,7 +63,7 @@ header {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  background: linear-gradient(135deg, #d75d73, #e0592b);
   border: 6px solid white;
   color: white;
   font-size: 64px;
@@ -238,25 +238,23 @@ header {
 }
 
 .score-box {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.1);
   padding: 15px 40px;
   border-radius: 30px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   font-size: 28px;
   font-weight: bold;
-  border: 3px solid rgba(255, 235, 59, 0.5);
+  border: 3px solid rgba(0, 0, 0, 0.1);
 }
 
 .label {
-  color: #ffeb3b;
-  text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+  color: #58b7b3;
 }
 
 #score {
-  color: #ffeb3b;
+  color: #58b7b3;
   font-size: 36px;
   margin: 0 8px;
-  text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
 }
 
 /* Spande */
@@ -282,11 +280,11 @@ header {
 }
 
 #blueBucket {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #099eda 0%, #58b7b3 100%);
 }
 
 #orangeBucket {
-  background: linear-gradient(135deg, #ffa500 0%, #ff6b6b 100%);
+  background: linear-gradient(135deg, #e63b29 0%, #e0592b 100%);
 }
 
 .bucket.hover {
